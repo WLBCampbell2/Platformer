@@ -1,4 +1,9 @@
-if place_free(obj_player.x+4, obj_player.y){
+if place_free(x+4, y){
   x=x+4
-  sprite_index = spr_right
+  if based=false{
+    sprite_index = spr_right
+  }
+  else{
+    sprite_index = spr_based_right
+  }
 }

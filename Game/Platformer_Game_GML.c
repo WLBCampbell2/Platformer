@@ -46,12 +46,22 @@ if keyboard_check(ord("S")) && room_next(room) = -1{
   y=y+4
 }
 
-// Collision with objects below
-if !place_empty(x, y-1){
-  y-=1
-  execute_file("gravity_turn_off.c")
+// Collision with obj_plat
+//if place_free(x, y) && place_meeting(x, y-1, obj_plat){
+
+// do as i say
+if keyboard_check(vk_enter){
+  gravity=0
+  vspeed=0
 }
-// better than falling through but not great
+
+// based key is tab
+if keyboard_check(vk_tab){
+  if based=false{
+    based=true
+  }
+  else based=false
+}
 
 // no key
 if keyboard_check(vk_nokey){
