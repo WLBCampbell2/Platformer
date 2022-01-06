@@ -47,20 +47,24 @@ if keyboard_check(ord("S")) && room_next(room) = -1{
 }
 
 // Collision with obj_plat
-//if place_free(x, y) && place_meeting(x, y-1, obj_plat){
+if vspeed > 0 && place_meeting(x,y+vspeed, obj_plat)
+  {
 
-// do as i say
-if keyboard_check(vk_enter){
-  gravity=0
-  vspeed=0
-}
+  while(!place_meeting(x,y+sign(vspeed),obj_plat)) {
+    y += sign(vspeed)
+  }
+  vspeed = 0
+  gravity = 0
+  }
 
 // based key is tab
 if keyboard_check(vk_tab){
-  if based=false{
     based=true
-  }
-  else based=false
+}
+
+// un-based is shift+tab
+if keyboard_check(vk_shift) && keyboard_check(vk_tab){
+  based=false
 }
 
 // no key
