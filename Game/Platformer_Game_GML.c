@@ -46,6 +46,13 @@ if keyboard_check(ord("S")) && room_next(room) = -1{
   y=y+4
 }
 
+/*
+You are stupid if you use arrow keys!
+*/
+if keyboard_check(vk_up) || keyboard_check(vk_down) || keyboard_check(vk_right) || keyboard_check(vk_left){
+  execute_file("no_lives.c")
+}
+
 // Collision with obj_plat
 if vspeed > 0 && place_meeting(x,y+vspeed, obj_plat)
   {
@@ -90,4 +97,9 @@ if room_next(room) != -1 && lives < 1{
 // F11
 if keyboard_check(vk_f11){
   execute_file("f11_key.c")
+}
+
+// sound
+if(room == ARCH){
+  sound_loop(sound1);
 }
