@@ -12,5 +12,5 @@ if vspeed=-12 {
 if instance_place(x, y, obj_ladder) {
   gravity=0
   gravity_direction=270
-  vspeed=0
+  vspeed=3
 }
