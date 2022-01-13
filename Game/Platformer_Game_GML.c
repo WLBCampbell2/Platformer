@@ -100,7 +100,9 @@ if keyboard_check(vk_f11){
 }
 
 // sound
+/* 
 while(room == ARCH)
 do{
   sound_loop(sound1);
 }
+*/
