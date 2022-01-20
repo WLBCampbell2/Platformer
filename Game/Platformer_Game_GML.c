@@ -64,14 +64,10 @@ if vspeed > 0 && place_meeting(x,y+vspeed, obj_plat)
   gravity = 0
   }
 
-// based key is tab
-if keyboard_check(vk_tab){
-    based=true
-}
-
-// un-based is shift+tab
-if keyboard_check(vk_shift) && keyboard_check(vk_tab){
-  based=false
+// Redpill
+if place_meeting(x,y, obj_pill){
+	with instance_position(x, y, obj_pill) instance_destroy();
+	draw_sprite_tiled(spr_based_pill, -1, x, y);
 }
 
 // no key
