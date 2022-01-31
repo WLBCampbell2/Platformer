@@ -22,7 +22,7 @@ if keyboard_check(vk_shift){
     execute_file("shift_button.c")
   }
   else{
-    y=y+4
+    vspeed=4
   }
 }
 
@@ -38,12 +38,12 @@ if keyboard_check(ord("D")){
 
 // W
 if keyboard_check(ord("W")) && room_next(room) = -1{
-  y=y-4
+  vspeed=-4
 }
 
 // S
 if keyboard_check(ord("S")) && room_next(room) = -1{
-  y=y+4
+  vspeed=4
 }
 
 /*

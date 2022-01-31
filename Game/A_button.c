@@ -1,5 +1,5 @@
-if place_free(x-4, y){
-  x=x-4
+if place_free(x-4, y-1){
+  hspeed=-4
   if based=false{
     sprite_index = spr_left
   }
