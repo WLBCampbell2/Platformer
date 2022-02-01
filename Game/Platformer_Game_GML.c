@@ -102,3 +102,21 @@ do{
   sound_loop(sound1);
 }
 */
+
+/*
+  objects
+*/
+
+//  obj_sus
+if instance_exists(obj_sus){
+  with(obj_sus){
+    execute_file("obj_sus.c")
+  }
+}
+
+//  obj_slime_small
+if instance_exists(obj_slime_small){
+  with(obj_slime_small){
+    execute_file("obj_slime_small.c")
+  }
+}
