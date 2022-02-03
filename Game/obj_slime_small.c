@@ -1,1 +1,1 @@
-path_start(pathslime_small, 3, 3, 0);
+path_start(pathslime_small, 2, 3, 0);

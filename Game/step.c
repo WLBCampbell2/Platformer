@@ -3,12 +3,10 @@ if place_empty(x, y+1) {
   gravity_direction=270
 }
 
-/*
 else {
   gravity=0
   gravity_direction=270
 }
-*/
 
 if vspeed<=-12 {
   vspeed=-12
