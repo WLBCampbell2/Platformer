@@ -1,7 +1,7 @@
 // no key
-move_contact_solid(270, 0.2)
+move_contact_solid(270, 0.5)
 hspeed=0
-//vspeed=0
+
 if based=false{
   sprite_index = spr_face
 }

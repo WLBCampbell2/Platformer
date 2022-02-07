@@ -1,9 +1,3 @@
-if place_free(x, y+4){
+if place_free(x, y+4) || place_meeting(x, y+4, obj_ladder){
   vspeed=4
-  if place_meeting(x, y, obj_ladder){
-    gravity=0
-  }
-  else{
-    vspeed=0
-  }
 }

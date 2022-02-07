@@ -107,10 +107,15 @@ do{
   objects
 */
 
+//  obj_poggers
+if place_meeting(x,y,obj_poggers){
+  with(obj_poggers){
+    execute_file("obj_poggers.c")
+  }
+}
+
 //  obj_sus
-if instance_exists(obj_sus){
-  with(obj_sus){
-    execute_file("obj_sus.c")
+execute_file("obj_poggers.c")
   }
 }
 
