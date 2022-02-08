@@ -1,3 +1,5 @@
 with(obj_poggers){
-    instance_destroy()
+    with(id){
+        instance_destroy()
+    }
 }

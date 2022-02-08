@@ -109,19 +109,21 @@ do{
 
 //  obj_poggers
 if place_meeting(x,y,obj_poggers){
-  with(obj_poggers){
-    execute_file("obj_poggers.c")
-  }
+  execute_file("obj_poggers.c")
 }
 
 //  obj_sus
-execute_file("obj_poggers.c")
-  }
+if instance_exists(obj_sus){
+  execute_file("obj_sus.c")
 }
-
 //  obj_slime_small
 if instance_exists(obj_slime_small){
   with(obj_slime_small){
     execute_file("obj_slime_small.c")
   }
+}
+
+//  Gen*too*_the_next_room
+if place_meeting(x, y, Gentoo){
+  room_goto_next()
 }
