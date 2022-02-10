@@ -127,3 +127,10 @@ if instance_exists(obj_slime_small){
 if place_meeting(x, y, Gentoo){
   room_goto_next()
 }
+
+//  direction (object)
+if instance_exists(direction){
+  with(direction){
+    execute_file("direction.c")
+  }
+}
