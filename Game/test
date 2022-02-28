@@ -1,6 +1,0 @@
-///wait(microsecs)
-var tend = get_timer()+argument1;
-while(get_timer()<tend)
-{
-    //do nothing
-}
