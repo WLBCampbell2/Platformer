@@ -95,14 +95,6 @@ if keyboard_check(vk_f11){
   execute_file("f11_key.c")
 }
 
-// sound
-/*
-while(room == ARCH)
-do{
-  sound_loop(sound1);
-}
-*/
-
 /*
   objects
 */
@@ -110,8 +102,12 @@ do{
 //  obj_poggers
 with(obj_poggers){
   if place_meeting(x,y,obj_player){
-      instance_destroy()
-      score+=10
+    instance_destroy()
+    score+=10
+    sound_play(sound2)
+  }
+  else{
+    sound_play(sound1)
   }
 }
 
