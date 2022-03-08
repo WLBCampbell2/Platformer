@@ -96,18 +96,18 @@ if keyboard_check(vk_f11){
 }
 
 /*
+  Sound
+*/
+sound_loop(sound1)
+
+/*
   objects
 */
 
 //  obj_poggers
 with(obj_poggers){
-  if place_meeting(x,y,obj_player){
-    instance_destroy()
-    score+=10
+  if place_meeting(x, y, obj_poggers){
     sound_play(sound2)
-  }
-  else{
-    sound_play(sound1)
   }
 }
 
