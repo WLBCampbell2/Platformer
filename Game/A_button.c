@@ -2,7 +2,7 @@ if place_free(x-4, y){
   hspeed=-4
 }
 
-if based=false{
+if global.based=false{
   sprite_index = spr_left
 }
 else{

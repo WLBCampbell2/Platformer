@@ -96,17 +96,14 @@ if keyboard_check(vk_f11){
 }
 
 /*
-  Sound
-*/
-sound_loop(sound1)
-
-/*
   objects
 */
 
 //  obj_poggers
 with(obj_poggers){
   if place_meeting(x, y, obj_poggers){
+    instance_destroy()
+    score += 10
     sound_play(sound2)
   }
 }
@@ -132,4 +129,13 @@ if instance_exists(direction){
   with(direction){
     execute_file("direction.c")
   }
+}
+
+//  Kali
+// performing combo : in step event
+if keyboard_check_pressed(combo_key[combo_step]){
+  combo_step+=1
+}
+if (combo_step==4){
+  global.kali=true
 }

@@ -2,7 +2,7 @@
 move_contact_solid(270, 0.5)
 hspeed=0
 
-if based=false{
+if global.based=false{
   sprite_index = spr_face
 }
 else{
