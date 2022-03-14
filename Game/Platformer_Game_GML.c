@@ -101,7 +101,7 @@ if keyboard_check(vk_f11){
 
 //  obj_poggers
 with(obj_poggers){
-  if place_meeting(x, y, obj_poggers){
+  if place_meeting(x, y, obj_player){
     instance_destroy()
     score += 10
     sound_play(sound2)
