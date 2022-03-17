@@ -137,3 +137,8 @@ if global.kali=true{
 	}
 	done = true
 }
+
+// redo background when not playing any sound
+if !sound_isplaying(sound1) && !sound_isplaying(sound2){
+  sound_loop(sound1)
+}
