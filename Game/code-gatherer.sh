@@ -69,4 +69,4 @@ do
 echo -e "Contents of \"$file\":\n$(cat $file)\n\n" >> all_code.txt
 done
 # Removing temp files
-rm *.$funny_extensions
+rm *.$funny_extension
