@@ -1,9 +1,10 @@
 #!/bin/bash
-if test -f c.txt; then
-    rm c.txt
+if test -f all_code.txt; then
+    rm all_code.txt
 fi
 # Code within GameMaker
-obj_player_create="
+funny_extension="internalfilesinmysillygame"
+cat > obj_player_create.$funny_extension << "EOF1"
 // lives
 if room == 0{
     lives = 5
@@ -21,10 +22,10 @@ combo_key[2] = ord('A');
 combo_key[3] = ord('L');
 combo_key[4] = ord('I');
 combo_step = 1;
-"
+EOF1
 
-obj_player_step="
-execute_file(\"main.c\")
+cat > obj_player_step.$funny_extension << "EOF2"
+execute_file("main.c")
 
 //  Kali
 with(obj_player){
@@ -35,35 +36,37 @@ with(obj_player){
         global.kali=true
     }
 }
-"
+EOF2
 
-quit="
-show_message(\"Score: \"+string(score))
+cat > quit_alt.$funny_extension << "EOF3"
+show_message("Score: "+string(score))
 game_end()
-"
-quit_alt=$quit
-quit_esc=$quit
-quit_left_mouse=$quit
+EOF3
+cp quit_alt.$funny_extension quit_esc.$funny_extension
+cp quit_alt.$funny_extension quit_left_mouse.$funny_extension
 
-restart="
-show_message(\"Score: \"+string(score))
+cat > restart_f5.$funny_extension << "EOF4"
+show_message("Score: "+string(score))
 game_restart()
-"
-restart_f5=$restart
-restart_left_mouse=$restart
+EOF4
+cp restart_f5.$funny_extension restart_left_mouse.$funny_extension
 
-background_sound_create="sound_loop(sound1)"
+cat > background_sound_create.$funny_extension << "EOF5"
+sound_loop(sound1)
+EOF5
 
-# Puting internal code in file
-echo -e "Internal code:\n\n\n" >> c.txt
-for ifile in $(ls *.internalfilesinmysillygame)
+# Puting internal code in output file
+echo -e "Internal code:\n\n\n" >> all_code.txt
+for ifile in $(ls *.$funny_extension)
 do
-echo -e "Contents of \"$ifile\":\n$(cat $ifile)\n\n" >> c.txt
+echo -e "Contents of \"$(ls $ifile | awk -F .$funny_extension '{ print $1 }')\":\n$(cat $ifile)\n\n" >> all_code.txt
 done
 
 # Code from external files
-echo -e "External code:\n\n\n" >> c.txt
+echo -e "External code:\n\n\n" >> all_code.txt
 for file in $(ls *.c)
 do
-echo -e "Contents of \"$file\":\n$(cat $file)\n\n" >> c.txt
+echo -e "Contents of \"$file\":\n$(cat $file)\n\n" >> all_code.txt
 done
+# Removing temp files
+rm *.$funny_extensions
