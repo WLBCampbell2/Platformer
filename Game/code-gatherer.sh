@@ -10,13 +10,12 @@ if room == 0{
     lives = 5
 }
 
+// setting some variables to false
 global.based=false
-
 global.kali=false
-
 done = false
 
-/// defining combo
+/// defining the kali combo
 combo_key[1] = ord('K');
 combo_key[2] = ord('A');
 combo_key[3] = ord('L');
@@ -25,9 +24,10 @@ combo_step = 1;
 EOF1
 
 cat > obj_player_step.$funny_extension << "EOF2"
+// execute the main file
 execute_file("main.c")
 
-//  Kali
+// run the combo checking stuff
 with(obj_player){
     if keyboard_check_pressed(combo_key[combo_step]){
         combo_step+=1
@@ -39,6 +39,7 @@ with(obj_player){
 EOF2
 
 cat > quit_alt.$funny_extension << "EOF3"
+// displays a message and ends the game
 show_message("Score: "+string(score))
 game_end()
 EOF3
@@ -46,12 +47,14 @@ cp quit_alt.$funny_extension quit_esc.$funny_extension
 cp quit_alt.$funny_extension quit_left_mouse.$funny_extension
 
 cat > restart_f5.$funny_extension << "EOF4"
+// display a message and restart the game
 show_message("Score: "+string(score))
 game_restart()
 EOF4
 cp restart_f5.$funny_extension restart_left_mouse.$funny_extension
 
 cat > background_sound_create.$funny_extension << "EOF5"
+// plays the background sound at the start
 sound_loop(sound1)
 EOF5
 
